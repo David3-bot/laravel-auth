@@ -15,7 +15,15 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
                 </div>
+                @foreach ($projects as $project)
+                    nome:{{$project->name}}
+                    Descrizione:{{$project->description}}
+                    Immagine:{{$project->cover_img}}
+                    Link:{{$project->github_link}}
+                    <img src="{{ asset('storage/' . $post->cover_img)}}">
+                @endforeach
             </div>
         </div>
     </div>

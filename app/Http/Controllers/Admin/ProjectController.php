@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -15,7 +16,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view ("dashboard");
+        $projects=Project::all();
+        return view ("dashboard", compact("projects"));
     }
 
     /**
@@ -36,9 +38,10 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request;
+        $data=$request->all();
         $project=Project::create($data);
-        return redirect()->route("dashboard",$project->id);
+        return redirect()->route("admin.dashboard",$project->id);
+        $img_path = Storage::put('uploads', $data['cover_img']);
     }
 
     /**
@@ -60,7 +63,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

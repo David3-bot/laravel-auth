@@ -20,7 +20,7 @@
                 aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="input-group mb-3">
-            <input type="file" name="cover_img" class="form-control" id="inputGroupFile02">
+            <input type="text" name="cover_img" class="form-control" id="inputGroupFile02">
             <label class="input-group-text" for="inputGroupFile02">Carica immagine</label>
         </div>
         <button type="submit">Salva</button>
