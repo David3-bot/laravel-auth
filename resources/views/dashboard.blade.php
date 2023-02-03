@@ -22,7 +22,7 @@
                     Descrizione:{{$project->description}}
                     Immagine:{{$project->cover_img}}
                     Link:{{$project->github_link}}
-                    <img src="{{ asset('storage/' . $post->cover_img)}}">
+                    <img src="{{ asset('storage/' . $project->cover_img)}}">
                 @endforeach
             </div>
         </div>
